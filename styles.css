@@ -143,7 +143,7 @@ body::before {
 
 .survey-shell {
   width: min(920px, 100%);
-  background: linear-gradient(180deg, #0f3357 0%, #0b2745 100%);
+  background: linear-gradient(180deg, #daf5fb 0%, #9cc7ef 100%);
   border-radius: 24px;
   box-shadow: 0 24px 48px rgba(2, 8, 23, 0.45);
   padding: 32px;
@@ -153,6 +153,7 @@ body::before {
   overflow: hidden;
   border: 1px solid rgba(59, 130, 246, 0.24);
   margin: 0 auto;
+  color: #0b223d;
 }
 
 .survey-shell::before {
@@ -176,16 +177,16 @@ body::before {
   align-items: center;
   gap: 12px;
   background: rgba(56, 189, 248, 0.18);
-  color: #e0f2fe;
-  padding: 10px 14px;
+  color: #0b223d;
+  padding: 14px 18px;
   border-radius: 16px;
-  width: fit-content;
+  width: 80%;
   margin: 0 auto;
 }
 
 .brand-logo {
-  width: 46px;
-  height: 46px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(148, 163, 184, 0.4);
@@ -195,13 +196,13 @@ body::before {
 .brand-name {
   margin: 0;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 23px;
 }
 
 .brand-tagline {
   margin: 0;
-  font-size: 12px;
-  color: #bae6fd;
+  font-size: 17px;
+  color: #1f3b57;
 }
 
 .survey-header h1 {
@@ -211,14 +212,14 @@ body::before {
 
 .survey-header p {
   margin: 0;
-  color: #cbd5f5;
+  color: #1f3b57;
   line-height: 1.5;
 }
 
 .progress {
   height: 10px;
   border-radius: 999px;
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(148, 163, 184, 0.35);
   overflow: hidden;
 }
 
@@ -260,15 +261,15 @@ fieldset.field > legend {
 .field input[type="tel"],
 .field select,
 .field textarea {
-  border: 2px solid rgba(56, 189, 248, 0.55);
+  border: 2px solid rgba(148, 163, 184, 0.6);
   border-radius: 12px;
   padding: 10px 14px;
   font-size: 15px;
   font-family: inherit;
   width: 100%;
-  background: rgba(12, 69, 105, 0.85);
-  color: #e2e8f0;
-  box-shadow: 0 6px 16px rgba(2, 8, 23, 0.2);
+  background: #f8fafc;
+  color: #0b223d;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
 }
 
 .field input[type="text"]:focus,
@@ -300,12 +301,12 @@ fieldset.field > legend {
 .option-card {
   flex: 1 1 120px;
   border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   padding: 12px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.15s ease, border-color 0.2s ease;
-  background: #123a60;
+  background: #f8fafc;
 }
 
 .option-card input {
@@ -315,7 +316,7 @@ fieldset.field > legend {
 .option-card span {
   display: block;
   font-weight: 600;
-  color: #e2e8f0;
+  color: #0b223d;
 }
 
 .option-card.active {
@@ -336,13 +337,13 @@ fieldset.field > legend {
 }
 
 .scale button {
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   border-radius: 10px;
-  background: #123a60;
+  background: #f8fafc;
   padding: 10px 0;
   font-weight: 600;
   cursor: pointer;
-  color: #e2e8f0;
+  color: #0b223d;
 }
 
 .scale button:focus-visible,
@@ -381,11 +382,11 @@ fieldset.field > legend {
 
 .actions .secondary {
   background: rgba(148, 163, 184, 0.2);
-  color: #e2e8f0;
+  color: #0b223d;
 }
 
 .summary {
-  background: #0f2947;
+  background: #f1f5f9;
   border-radius: 16px;
   padding: 20px;
   display: grid;
@@ -402,7 +403,7 @@ fieldset.field > legend {
 }
 
 .summary-item span {
-  color: #94a3b8;
+  color: #64748b;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -424,9 +425,9 @@ fieldset.field > legend {
 
 .success {
   margin: 0;
-  color: #bbf7d0;
-  background: rgba(22, 163, 74, 0.2);
-  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #166534;
+  background: rgba(187, 247, 208, 0.5);
+  border: 1px solid rgba(34, 197, 94, 0.35);
   padding: 10px 12px;
   border-radius: 12px;
   font-weight: 600;
@@ -448,8 +449,8 @@ fieldset.field > legend {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(14, 116, 144, 0.25);
-  color: #bae6fd;
+  background: rgba(226, 232, 240, 0.9);
+  color: #0b223d;
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 13px;
