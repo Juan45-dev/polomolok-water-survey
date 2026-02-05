@@ -42,46 +42,37 @@ body::before {
 
 @keyframes bgFade {
   0% {
-    opacity: 0.15;
+    opacity: 0.2;
     background-image: url("BG animation/519090355_1185137233648640_1638005007104316964_n.jpg");
   }
-  6% {
+  10% {
     opacity: 0.55;
   }
-  22% {
-    opacity: 0.55;
-  }
-  28% {
+  25% {
     opacity: 0.2;
   }
-  28.1% {
+  25.1% {
     background-image: url("BG animation/525552560_1196358389193191_5939571987540928205_n.jpg");
   }
-  34% {
+  35% {
     opacity: 0.55;
   }
   50% {
-    opacity: 0.55;
-  }
-  56% {
     opacity: 0.2;
   }
-  56.1% {
+  50.1% {
     background-image: url("BG animation/622354733_1357713569724338_8926535102411116850_n.jpg");
   }
-  62% {
+  60% {
     opacity: 0.55;
   }
-  78% {
-    opacity: 0.55;
-  }
-  84% {
+  75% {
     opacity: 0.2;
   }
-  84.1% {
+  75.1% {
     background-image: url("BG animation/Screenshot 2026-02-05 115549.png");
   }
-  90% {
+  85% {
     opacity: 0.55;
   }
   100% {
@@ -259,6 +250,7 @@ fieldset.field > legend {
 
 .field input[type="text"],
 .field input[type="email"],
+.field input[type="tel"],
 .field select,
 .field textarea {
   border: 2px solid rgba(56, 189, 248, 0.55);
