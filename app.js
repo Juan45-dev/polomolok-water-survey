@@ -250,7 +250,6 @@ function App() {
                   placeholder="+1 555 123 4567"
                   autoComplete="tel"
                   inputMode="tel"
-                  pattern="\\+?[0-9\\s()\\-]{7,}"
                   aria-invalid={!isPhoneValid}
                   value={formState.phone}
                   onChange={(event) => updateField("phone", event.target.value)}
@@ -265,7 +264,6 @@ function App() {
                   id="accountNumber"
                   type="text"
                   placeholder="ACC-00012345"
-                  pattern="[A-Za-z0-9-]{5,}"
                   aria-invalid={!isAccountValid}
                   value={formState.accountNumber}
                   onChange={(event) =>
