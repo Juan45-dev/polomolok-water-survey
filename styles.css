@@ -21,6 +21,12 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -146,6 +152,7 @@ body::before {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(59, 130, 246, 0.24);
+  margin: 0 auto;
 }
 
 .survey-shell::before {

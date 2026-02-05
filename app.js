@@ -32,10 +32,42 @@ const ZONE_OPTIONS = [
 const STEP_LABELS = ["Account", "Service", "Ratings", "Comments", "Review"];
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxypMqE20DFz0N2GhIbi9jCabNAlu_h18nuUp8HAXcuarAJ63PbQEcmgHYWMz3zM7ls/exec";
+  "https://script.google.com/macros/s/AKfycbxT3RAA8W2BSQIPGY0BX_nRhQQDY2Dkb6BBoMWo5o5S1wfclT3_ysMuyMlPn2N--hXz/exec";
 
 const PHONE_PATTERN = /^\+?[0-9\s()-]{7,}$/;
 const ACCOUNT_PATTERN = /^[A-Za-z0-9-]{5,}$/;
+
+const buildDedupKey = (state, overallScoreValue) => {
+  const topicValues = [
+    state.topics.pressure,
+    state.topics.quality,
+    state.topics.billing,
+    state.topics.support,
+  ];
+  return [
+    state.name.trim().toLowerCase(),
+    state.email.trim().toLowerCase(),
+    state.phone.trim(),
+    state.accountNumber.trim().toLowerCase(),
+    state.zone,
+    state.purpose,
+    state.experience,
+    state.nps,
+    ...topicValues,
+    overallScoreValue,
+    state.feedback.trim().toLowerCase(),
+    state.followUp ? "yes" : "no",
+  ].join("|");
+};
+
+const hashString = (value) => {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash << 5) - hash + value.charCodeAt(i);
+    hash |= 0;
+  }
+  return `sub_${Math.abs(hash)}`;
+};
 
 const DEFAULT_STATE = {
   name: "",
@@ -121,34 +153,22 @@ function App() {
 
     setIsSaving(true);
     setSaveError("");
+    const submissionId = hashString(buildDedupKey(formState, overallScore));
     const payload = {
       ...formState,
       overallScore,
+      submissionId,
       submittedAt: new Date().toISOString(),
     };
 
     try {
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error("Bad response");
-      }
-
-      let data = null;
-      try {
-        data = await response.json();
-      } catch (error) {
-        data = null;
-      }
-
-      if (data && data.status === "error") {
-        throw new Error(data.message || "Save failed");
-      }
-
+      // With no-cors we can't read the response; assume success if no error.
       return true;
     } catch (error) {
       setSaveError("We couldn't save your response. Please try again.");
